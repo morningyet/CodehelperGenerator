@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.morningyet.codehelpergenerator.dao.AppraiseDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="org.morningyet.codehelpergenerator.pojo.Appraise">
+        <result column="id" property="id"/>
+        <result column="eid" property="eid"/>
+        <result column="appdate" property="appdate"/>
+        <result column="appresult" property="appresult"/>
+        <result column="appcontent" property="appcontent"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        eid,
+        appdate,
+        appresult,
+        appcontent,
+        remark
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO appraise
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.eid != null"> eid, </if>
+            <if test="pojo.appdate != null"> appdate, </if>
+            <if test="pojo.appresult != null"> appresult, </if>
+            <if test="pojo.appcontent != null"> appcontent, </if>
+            <if test="pojo.remark != null"> remark, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.eid != null"> #{pojo.eid}, </if>
+            <if test="pojo.appdate != null"> #{pojo.appdate}, </if>
+            <if test="pojo.appresult != null"> #{pojo.appresult}, </if>
+            <if test="pojo.appcontent != null"> #{pojo.appcontent}, </if>
+            <if test="pojo.remark != null"> #{pojo.remark}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO appraise(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.eid},
+            #{pojo.appdate},
+            #{pojo.appresult},
+            #{pojo.appcontent},
+            #{pojo.remark}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE appraise
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.eid != null"> eid = #{pojo.eid}, </if>
+            <if test="pojo.appdate != null"> appdate = #{pojo.appdate}, </if>
+            <if test="pojo.appresult != null"> appresult = #{pojo.appresult}, </if>
+            <if test="pojo.appcontent != null"> appcontent = #{pojo.appcontent}, </if>
+            <if test="pojo.remark != null"> remark = #{pojo.remark} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM appraise
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.eid != null"> AND eid = #{pojo.eid} </if>
+            <if test="pojo.appdate != null"> AND appdate = #{pojo.appdate} </if>
+            <if test="pojo.appresult != null"> AND appresult = #{pojo.appresult} </if>
+            <if test="pojo.appcontent != null"> AND appcontent = #{pojo.appcontent} </if>
+            <if test="pojo.remark != null"> AND remark = #{pojo.remark} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM appraise where id = #{id}
+    </delete>
+</mapper>

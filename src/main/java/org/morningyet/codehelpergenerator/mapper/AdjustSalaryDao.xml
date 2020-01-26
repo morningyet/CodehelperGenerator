@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.morningyet.codehelpergenerator.dao.AdjustSalaryDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="org.morningyet.codehelpergenerator.pojo.AdjustSalary">
+        <result column="id" property="id"/>
+        <result column="eid" property="eid"/>
+        <result column="asdate" property="asdate"/>
+        <result column="beforesalary" property="beforesalary"/>
+        <result column="aftersalary" property="aftersalary"/>
+        <result column="reason" property="reason"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        eid,
+        asdate,
+        beforesalary,
+        aftersalary,
+        reason,
+        remark
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO adjust_salary
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.eid != null"> eid, </if>
+            <if test="pojo.asdate != null"> asdate, </if>
+            <if test="pojo.beforesalary != null"> beforesalary, </if>
+            <if test="pojo.aftersalary != null"> aftersalary, </if>
+            <if test="pojo.reason != null"> reason, </if>
+            <if test="pojo.remark != null"> remark, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.eid != null"> #{pojo.eid}, </if>
+            <if test="pojo.asdate != null"> #{pojo.asdate}, </if>
+            <if test="pojo.beforesalary != null"> #{pojo.beforesalary}, </if>
+            <if test="pojo.aftersalary != null"> #{pojo.aftersalary}, </if>
+            <if test="pojo.reason != null"> #{pojo.reason}, </if>
+            <if test="pojo.remark != null"> #{pojo.remark}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO adjust_salary(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.eid},
+            #{pojo.asdate},
+            #{pojo.beforesalary},
+            #{pojo.aftersalary},
+            #{pojo.reason},
+            #{pojo.remark}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE adjust_salary
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.eid != null"> eid = #{pojo.eid}, </if>
+            <if test="pojo.asdate != null"> asdate = #{pojo.asdate}, </if>
+            <if test="pojo.beforesalary != null"> beforesalary = #{pojo.beforesalary}, </if>
+            <if test="pojo.aftersalary != null"> aftersalary = #{pojo.aftersalary}, </if>
+            <if test="pojo.reason != null"> reason = #{pojo.reason}, </if>
+            <if test="pojo.remark != null"> remark = #{pojo.remark} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM adjust_salary
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.eid != null"> AND eid = #{pojo.eid} </if>
+            <if test="pojo.asdate != null"> AND asdate = #{pojo.asdate} </if>
+            <if test="pojo.beforesalary != null"> AND beforesalary = #{pojo.beforesalary} </if>
+            <if test="pojo.aftersalary != null"> AND aftersalary = #{pojo.aftersalary} </if>
+            <if test="pojo.reason != null"> AND reason = #{pojo.reason} </if>
+            <if test="pojo.remark != null"> AND remark = #{pojo.remark} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM adjust_salary where id = #{id}
+    </delete>
+</mapper>

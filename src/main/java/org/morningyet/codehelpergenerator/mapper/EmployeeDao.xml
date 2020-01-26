@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.morningyet.codehelpergenerator.dao.EmployeeDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="org.morningyet.codehelpergenerator.pojo.Employee">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="gender" property="gender"/>
+        <result column="birthday" property="birthday"/>
+        <result column="idcard" property="idcard"/>
+        <result column="wedlock" property="wedlock"/>
+        <result column="nationid" property="nationid"/>
+        <result column="nativeplace" property="nativeplace"/>
+        <result column="politicid" property="politicid"/>
+        <result column="email" property="email"/>
+        <result column="phone" property="phone"/>
+        <result column="address" property="address"/>
+        <result column="departmentid" property="departmentid"/>
+        <result column="joblevelid" property="joblevelid"/>
+        <result column="posid" property="posid"/>
+        <result column="engageform" property="engageform"/>
+        <result column="tiptopdegree" property="tiptopdegree"/>
+        <result column="specialty" property="specialty"/>
+        <result column="school" property="school"/>
+        <result column="begindate" property="begindate"/>
+        <result column="workstate" property="workstate"/>
+        <result column="workid" property="workid"/>
+        <result column="contractterm" property="contractterm"/>
+        <result column="conversiontime" property="conversiontime"/>
+        <result column="notworkdate" property="notworkdate"/>
+        <result column="begincontract" property="begincontract"/>
+        <result column="endcontract" property="endcontract"/>
+        <result column="workage" property="workage"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        name,
+        gender,
+        birthday,
+        idcard,
+        wedlock,
+        nationid,
+        nativeplace,
+        politicid,
+        email,
+        phone,
+        address,
+        departmentid,
+        joblevelid,
+        posid,
+        engageform,
+        tiptopdegree,
+        specialty,
+        school,
+        begindate,
+        workstate,
+        workid,
+        contractterm,
+        conversiontime,
+        notworkdate,
+        begincontract,
+        endcontract,
+        workage
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO employee
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.name != null"> name, </if>
+            <if test="pojo.gender != null"> gender, </if>
+            <if test="pojo.birthday != null"> birthday, </if>
+            <if test="pojo.idcard != null"> idcard, </if>
+            <if test="pojo.wedlock != null"> wedlock, </if>
+            <if test="pojo.nationid != null"> nationid, </if>
+            <if test="pojo.nativeplace != null"> nativeplace, </if>
+            <if test="pojo.politicid != null"> politicid, </if>
+            <if test="pojo.email != null"> email, </if>
+            <if test="pojo.phone != null"> phone, </if>
+            <if test="pojo.address != null"> address, </if>
+            <if test="pojo.departmentid != null"> departmentid, </if>
+            <if test="pojo.joblevelid != null"> joblevelid, </if>
+            <if test="pojo.posid != null"> posid, </if>
+            <if test="pojo.engageform != null"> engageform, </if>
+            <if test="pojo.tiptopdegree != null"> tiptopdegree, </if>
+            <if test="pojo.specialty != null"> specialty, </if>
+            <if test="pojo.school != null"> school, </if>
+            <if test="pojo.begindate != null"> begindate, </if>
+            <if test="pojo.workstate != null"> workstate, </if>
+            <if test="pojo.workid != null"> workid, </if>
+            <if test="pojo.contractterm != null"> contractterm, </if>
+            <if test="pojo.conversiontime != null"> conversiontime, </if>
+            <if test="pojo.notworkdate != null"> notworkdate, </if>
+            <if test="pojo.begincontract != null"> begincontract, </if>
+            <if test="pojo.endcontract != null"> endcontract, </if>
+            <if test="pojo.workage != null"> workage, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.name != null"> #{pojo.name}, </if>
+            <if test="pojo.gender != null"> #{pojo.gender}, </if>
+            <if test="pojo.birthday != null"> #{pojo.birthday}, </if>
+            <if test="pojo.idcard != null"> #{pojo.idcard}, </if>
+            <if test="pojo.wedlock != null"> #{pojo.wedlock}, </if>
+            <if test="pojo.nationid != null"> #{pojo.nationid}, </if>
+            <if test="pojo.nativeplace != null"> #{pojo.nativeplace}, </if>
+            <if test="pojo.politicid != null"> #{pojo.politicid}, </if>
+            <if test="pojo.email != null"> #{pojo.email}, </if>
+            <if test="pojo.phone != null"> #{pojo.phone}, </if>
+            <if test="pojo.address != null"> #{pojo.address}, </if>
+            <if test="pojo.departmentid != null"> #{pojo.departmentid}, </if>
+            <if test="pojo.joblevelid != null"> #{pojo.joblevelid}, </if>
+            <if test="pojo.posid != null"> #{pojo.posid}, </if>
+            <if test="pojo.engageform != null"> #{pojo.engageform}, </if>
+            <if test="pojo.tiptopdegree != null"> #{pojo.tiptopdegree}, </if>
+            <if test="pojo.specialty != null"> #{pojo.specialty}, </if>
+            <if test="pojo.school != null"> #{pojo.school}, </if>
+            <if test="pojo.begindate != null"> #{pojo.begindate}, </if>
+            <if test="pojo.workstate != null"> #{pojo.workstate}, </if>
+            <if test="pojo.workid != null"> #{pojo.workid}, </if>
+            <if test="pojo.contractterm != null"> #{pojo.contractterm}, </if>
+            <if test="pojo.conversiontime != null"> #{pojo.conversiontime}, </if>
+            <if test="pojo.notworkdate != null"> #{pojo.notworkdate}, </if>
+            <if test="pojo.begincontract != null"> #{pojo.begincontract}, </if>
+            <if test="pojo.endcontract != null"> #{pojo.endcontract}, </if>
+            <if test="pojo.workage != null"> #{pojo.workage}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO employee(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.gender},
+            #{pojo.birthday},
+            #{pojo.idcard},
+            #{pojo.wedlock},
+            #{pojo.nationid},
+            #{pojo.nativeplace},
+            #{pojo.politicid},
+            #{pojo.email},
+            #{pojo.phone},
+            #{pojo.address},
+            #{pojo.departmentid},
+            #{pojo.joblevelid},
+            #{pojo.posid},
+            #{pojo.engageform},
+            #{pojo.tiptopdegree},
+            #{pojo.specialty},
+            #{pojo.school},
+            #{pojo.begindate},
+            #{pojo.workstate},
+            #{pojo.workid},
+            #{pojo.contractterm},
+            #{pojo.conversiontime},
+            #{pojo.notworkdate},
+            #{pojo.begincontract},
+            #{pojo.endcontract},
+            #{pojo.workage}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE employee
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.name != null"> name = #{pojo.name}, </if>
+            <if test="pojo.gender != null"> gender = #{pojo.gender}, </if>
+            <if test="pojo.birthday != null"> birthday = #{pojo.birthday}, </if>
+            <if test="pojo.idcard != null"> idcard = #{pojo.idcard}, </if>
+            <if test="pojo.wedlock != null"> wedlock = #{pojo.wedlock}, </if>
+            <if test="pojo.nationid != null"> nationid = #{pojo.nationid}, </if>
+            <if test="pojo.nativeplace != null"> nativeplace = #{pojo.nativeplace}, </if>
+            <if test="pojo.politicid != null"> politicid = #{pojo.politicid}, </if>
+            <if test="pojo.email != null"> email = #{pojo.email}, </if>
+            <if test="pojo.phone != null"> phone = #{pojo.phone}, </if>
+            <if test="pojo.address != null"> address = #{pojo.address}, </if>
+            <if test="pojo.departmentid != null"> departmentid = #{pojo.departmentid}, </if>
+            <if test="pojo.joblevelid != null"> joblevelid = #{pojo.joblevelid}, </if>
+            <if test="pojo.posid != null"> posid = #{pojo.posid}, </if>
+            <if test="pojo.engageform != null"> engageform = #{pojo.engageform}, </if>
+            <if test="pojo.tiptopdegree != null"> tiptopdegree = #{pojo.tiptopdegree}, </if>
+            <if test="pojo.specialty != null"> specialty = #{pojo.specialty}, </if>
+            <if test="pojo.school != null"> school = #{pojo.school}, </if>
+            <if test="pojo.begindate != null"> begindate = #{pojo.begindate}, </if>
+            <if test="pojo.workstate != null"> workstate = #{pojo.workstate}, </if>
+            <if test="pojo.workid != null"> workid = #{pojo.workid}, </if>
+            <if test="pojo.contractterm != null"> contractterm = #{pojo.contractterm}, </if>
+            <if test="pojo.conversiontime != null"> conversiontime = #{pojo.conversiontime}, </if>
+            <if test="pojo.notworkdate != null"> notworkdate = #{pojo.notworkdate}, </if>
+            <if test="pojo.begincontract != null"> begincontract = #{pojo.begincontract}, </if>
+            <if test="pojo.endcontract != null"> endcontract = #{pojo.endcontract}, </if>
+            <if test="pojo.workage != null"> workage = #{pojo.workage} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM employee
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.name != null"> AND name = #{pojo.name} </if>
+            <if test="pojo.gender != null"> AND gender = #{pojo.gender} </if>
+            <if test="pojo.birthday != null"> AND birthday = #{pojo.birthday} </if>
+            <if test="pojo.idcard != null"> AND idcard = #{pojo.idcard} </if>
+            <if test="pojo.wedlock != null"> AND wedlock = #{pojo.wedlock} </if>
+            <if test="pojo.nationid != null"> AND nationid = #{pojo.nationid} </if>
+            <if test="pojo.nativeplace != null"> AND nativeplace = #{pojo.nativeplace} </if>
+            <if test="pojo.politicid != null"> AND politicid = #{pojo.politicid} </if>
+            <if test="pojo.email != null"> AND email = #{pojo.email} </if>
+            <if test="pojo.phone != null"> AND phone = #{pojo.phone} </if>
+            <if test="pojo.address != null"> AND address = #{pojo.address} </if>
+            <if test="pojo.departmentid != null"> AND departmentid = #{pojo.departmentid} </if>
+            <if test="pojo.joblevelid != null"> AND joblevelid = #{pojo.joblevelid} </if>
+            <if test="pojo.posid != null"> AND posid = #{pojo.posid} </if>
+            <if test="pojo.engageform != null"> AND engageform = #{pojo.engageform} </if>
+            <if test="pojo.tiptopdegree != null"> AND tiptopdegree = #{pojo.tiptopdegree} </if>
+            <if test="pojo.specialty != null"> AND specialty = #{pojo.specialty} </if>
+            <if test="pojo.school != null"> AND school = #{pojo.school} </if>
+            <if test="pojo.begindate != null"> AND begindate = #{pojo.begindate} </if>
+            <if test="pojo.workstate != null"> AND workstate = #{pojo.workstate} </if>
+            <if test="pojo.workid != null"> AND workid = #{pojo.workid} </if>
+            <if test="pojo.contractterm != null"> AND contractterm = #{pojo.contractterm} </if>
+            <if test="pojo.conversiontime != null"> AND conversiontime = #{pojo.conversiontime} </if>
+            <if test="pojo.notworkdate != null"> AND notworkdate = #{pojo.notworkdate} </if>
+            <if test="pojo.begincontract != null"> AND begincontract = #{pojo.begincontract} </if>
+            <if test="pojo.endcontract != null"> AND endcontract = #{pojo.endcontract} </if>
+            <if test="pojo.workage != null"> AND workage = #{pojo.workage} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM employee where id = #{id}
+    </delete>
+</mapper>

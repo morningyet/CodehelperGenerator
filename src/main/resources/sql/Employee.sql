@@ -1,0 +1,33 @@
+-- auto Generated on 2020-01-26 21:58:47 
+-- DROP TABLE IF EXISTS `employee`; 
+CREATE TABLE employee(
+    `id` INTEGER(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `name` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'name',
+    `gender` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'gender',
+    `birthday` date NOT NULL DEFAULT -1 COMMENT 'birthday',
+    `idcard` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'idcard',
+    `wedlock` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'wedlock',
+    `nationid` NUMBER(12) NOT NULL DEFAULT -1 COMMENT 'nationid',
+    `nativeplace` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'nativeplace',
+    `politicid` NUMBER(12) NOT NULL DEFAULT -1 COMMENT 'politicid',
+    `email` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'email',
+    `phone` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'phone',
+    `address` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'address',
+    `departmentid` NUMBER(12) NOT NULL DEFAULT -1 COMMENT 'departmentid',
+    `joblevelid` NUMBER(12) NOT NULL DEFAULT -1 COMMENT 'joblevelid',
+    `posid` NUMBER(12) NOT NULL DEFAULT -1 COMMENT 'posid',
+    `engageform` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'engageform',
+    `tiptopdegree` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'tiptopdegree',
+    `specialty` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'specialty',
+    `school` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'school',
+    `begindate` date NOT NULL DEFAULT -1 COMMENT 'begindate',
+    `workstate` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'workstate',
+    `workid` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'workid',
+    `contractterm` NUMBER(14,4) NOT NULL DEFAULT -1 COMMENT 'contractterm',
+    `conversiontime` date NOT NULL DEFAULT -1 COMMENT 'conversiontime',
+    `notworkdate` date NOT NULL DEFAULT -1 COMMENT 'notworkdate',
+    `begincontract` date NOT NULL DEFAULT -1 COMMENT 'begincontract',
+    `endcontract` date NOT NULL DEFAULT -1 COMMENT 'endcontract',
+    `workage` NUMBER(12) NOT NULL DEFAULT -1 COMMENT 'workage',
+    PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT 'employee';

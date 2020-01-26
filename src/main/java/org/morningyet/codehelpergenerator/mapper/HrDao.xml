@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.morningyet.codehelpergenerator.dao.HrDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="org.morningyet.codehelpergenerator.pojo.Hr">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="phone" property="phone"/>
+        <result column="telephone" property="telephone"/>
+        <result column="address" property="address"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="userface" property="userface"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        name,
+        phone,
+        telephone,
+        address,
+        username,
+        password,
+        userface,
+        remark
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO hr
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.name != null"> name, </if>
+            <if test="pojo.phone != null"> phone, </if>
+            <if test="pojo.telephone != null"> telephone, </if>
+            <if test="pojo.address != null"> address, </if>
+            <if test="pojo.username != null"> username, </if>
+            <if test="pojo.password != null"> password, </if>
+            <if test="pojo.userface != null"> userface, </if>
+            <if test="pojo.remark != null"> remark, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.name != null"> #{pojo.name}, </if>
+            <if test="pojo.phone != null"> #{pojo.phone}, </if>
+            <if test="pojo.telephone != null"> #{pojo.telephone}, </if>
+            <if test="pojo.address != null"> #{pojo.address}, </if>
+            <if test="pojo.username != null"> #{pojo.username}, </if>
+            <if test="pojo.password != null"> #{pojo.password}, </if>
+            <if test="pojo.userface != null"> #{pojo.userface}, </if>
+            <if test="pojo.remark != null"> #{pojo.remark}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO hr(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.phone},
+            #{pojo.telephone},
+            #{pojo.address},
+            #{pojo.username},
+            #{pojo.password},
+            #{pojo.userface},
+            #{pojo.remark}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE hr
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.name != null"> name = #{pojo.name}, </if>
+            <if test="pojo.phone != null"> phone = #{pojo.phone}, </if>
+            <if test="pojo.telephone != null"> telephone = #{pojo.telephone}, </if>
+            <if test="pojo.address != null"> address = #{pojo.address}, </if>
+            <if test="pojo.username != null"> username = #{pojo.username}, </if>
+            <if test="pojo.password != null"> password = #{pojo.password}, </if>
+            <if test="pojo.userface != null"> userface = #{pojo.userface}, </if>
+            <if test="pojo.remark != null"> remark = #{pojo.remark} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM hr
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.name != null"> AND name = #{pojo.name} </if>
+            <if test="pojo.phone != null"> AND phone = #{pojo.phone} </if>
+            <if test="pojo.telephone != null"> AND telephone = #{pojo.telephone} </if>
+            <if test="pojo.address != null"> AND address = #{pojo.address} </if>
+            <if test="pojo.username != null"> AND username = #{pojo.username} </if>
+            <if test="pojo.password != null"> AND password = #{pojo.password} </if>
+            <if test="pojo.userface != null"> AND userface = #{pojo.userface} </if>
+            <if test="pojo.remark != null"> AND remark = #{pojo.remark} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM hr where id = #{id}
+    </delete>
+</mapper>

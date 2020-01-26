@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.morningyet.codehelpergenerator.dao.DepartmentDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="org.morningyet.codehelpergenerator.pojo.Department">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="parentid" property="parentid"/>
+        <result column="deppath" property="deppath"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        name,
+        parentid,
+        deppath
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO department
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.name != null"> name, </if>
+            <if test="pojo.parentid != null"> parentid, </if>
+            <if test="pojo.deppath != null"> deppath, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.name != null"> #{pojo.name}, </if>
+            <if test="pojo.parentid != null"> #{pojo.parentid}, </if>
+            <if test="pojo.deppath != null"> #{pojo.deppath}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO department(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.parentid},
+            #{pojo.deppath}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE department
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.name != null"> name = #{pojo.name}, </if>
+            <if test="pojo.parentid != null"> parentid = #{pojo.parentid}, </if>
+            <if test="pojo.deppath != null"> deppath = #{pojo.deppath} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM department
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.name != null"> AND name = #{pojo.name} </if>
+            <if test="pojo.parentid != null"> AND parentid = #{pojo.parentid} </if>
+            <if test="pojo.deppath != null"> AND deppath = #{pojo.deppath} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM department where id = #{id}
+    </delete>
+</mapper>

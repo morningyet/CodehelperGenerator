@@ -1,0 +1,12 @@
+-- auto Generated on 2020-01-26 21:58:47 
+-- DROP TABLE IF EXISTS `menu`; 
+CREATE TABLE menu(
+    `id` INTEGER(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+    `url` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'url',
+    `path` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'path',
+    `component` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'component',
+    `name` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'name',
+    `iconcls` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'iconcls',
+    `parentid` NUMBER(12) NOT NULL DEFAULT -1 COMMENT 'parentid',
+    PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT 'menu';
